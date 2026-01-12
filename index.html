@@ -33,16 +33,30 @@
         .bg-gold {
             background-color: #d4af37;
         }
+        .text-green-neon {
+            color: #4ade80;
+        }
         .btn-gradient {
             background: linear-gradient(to bottom, #d4af37, #b4941f);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
         .btn-gradient:hover {
             background: linear-gradient(to bottom, #eec84e, #d4af37);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
         /* Efecto sutil para la imagen */
         .hero-image-container {
             box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
         }
+        /* Animación suave de pulso para la urgencia */
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .animate-subtle-pulse {
+            animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
         /* Ajuste para móviles muy pequeños */
         @media (max-width: 380px) {
             h1 { font-size: 2rem; }
@@ -51,8 +65,15 @@
 </head>
 <body class="antialiased leading-relaxed">
 
+    <!-- BARRA DE URGENCIA SUPERIOR -->
+    <div class="bg-red-900 text-center py-2 px-2 sticky top-0 z-50 shadow-md shadow-red-900/50">
+        <p class="text-sm md:text-base font-bold text-white uppercase tracking-wider animate-subtle-pulse">
+            ⚠️ Solo para mayores de 18 años - Oferta limitada
+        </p>
+    </div>
+
     <!-- 1. LA CABECERA -->
-    <header class="relative pt-10 pb-6 text-center px-4 max-w-4xl mx-auto">
+    <header class="relative pt-8 pb-6 text-center px-4 max-w-4xl mx-auto">
         <!-- Título de Impacto -->
         <h1 class="text-4xl md:text-6xl font-black text-red-700 mb-4 tracking-tight uppercase leading-tight drop-shadow-lg">
             Las Vivencias más <br/><span class="text-red-600">Guarras de Lupe</span>
@@ -65,7 +86,6 @@
 
         <!-- Imagen Hero (Carga local) -->
         <div class="relative w-full max-w-md mx-auto mb-8 hero-image-container rounded-lg overflow-hidden border border-gray-800">
-            <!-- AQUÍ SE CARGA TU IMAGEN GENERADA "lupe-hero.jpg" -->
             <img src="./lupe-hero.jpg" 
                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop';"
                  alt="Lupe mirando a cámara" 
@@ -86,9 +106,64 @@
                 Si has llegado hasta aquí es porque, al igual que yo, sabes que la curiosidad es un fuego que no se apaga fácilmente. He decidido poner por escrito mis vivencias más íntimas, esas que solo ocurren cuando se apagan las luces y se pierden los modales.
             </p>
             
-            <p class="text-xl md:text-2xl text-white font-semibold">
+            <p class="text-xl md:text-2xl text-white font-semibold mb-6">
                 No son cuentos de hadas. <span class="text-red-500">Son 5 relatos crudos, directos y sin censura</span> diseñados para hombres que saben apreciar el verdadero placer.
             </p>
+        </div>
+
+        <!-- BOTÓN CTA #1 (NUEVO - PARA IMPULSIVOS) -->
+        <div class="mt-8 text-center bg-gray-900 border border-gray-700 p-6 rounded-xl relative overflow-hidden">
+            <!-- Etiqueta de escasez -->
+            <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">
+                -52% Descuento
+            </div>
+
+            <!-- Precio Ancla -->
+            <div class="mb-4">
+                <p class="text-gray-400 text-lg line-through">Precio habitual: 27 $</p>
+                <p class="text-3xl md:text-4xl font-black text-green-neon">HOY SOLO: 12,90 $</p>
+                <p class="text-sm text-yellow-500 mt-1 animate-pulse">🔥 Más de 500 hombres descargaron esto hoy</p>
+            </div>
+
+            <a href="https://pay.hotmart.com/V103805314Q" class="group block w-full">
+                <button class="w-full btn-gradient text-black font-black text-xl md:text-2xl py-4 px-4 rounded-xl transform transition hover:scale-105 active:scale-95">
+                    QUIERO LEERLAS YA
+                    <i data-lucide="zap" class="inline-block w-6 h-6 ml-1 mb-1 fill-black"></i>
+                </button>
+            </a>
+            <p class="text-xs text-gray-500 mt-3">Descarga digital inmediata e irrelevante en tu extracto.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TANGIBILIDAD (NUEVA) -->
+    <section class="max-w-3xl mx-auto px-6 py-6">
+        <div class="flex flex-col md:flex-row items-center bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+            <div class="w-full md:w-1/3 mb-4 md:mb-0 flex justify-center">
+                <!-- Imagen Mockup del Ebook -->
+                <div class="relative w-32 h-48 bg-gray-900 rounded-lg border-2 border-gray-600 flex flex-col items-center justify-center shadow-2xl">
+                    <!-- Si tienes la imagen ebook-mockup.png, se cargará. Si no, muestra iconos -->
+                    <img src="./ebook-mockup.png" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                         class="w-full h-full object-cover rounded-md" alt="Ebook Cover">
+                    
+                    <!-- Fallback visual si no hay imagen -->
+                    <div class="hidden flex-col items-center text-center p-2 h-full justify-center w-full">
+                        <i data-lucide="smartphone" class="w-12 h-12 text-gray-500 mb-2"></i>
+                        <span class="text-xs text-gold font-serif">LAS VIVENCIAS DE LUPE</span>
+                        <div class="mt-2 bg-red-800 text-xs px-2 py-0.5 rounded text-white">PDF</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 md:pl-6 text-center md:text-left">
+                <h3 class="text-xl text-white font-bold mb-2">Lectura Inmediata en tu Móvil</h3>
+                <p class="text-gray-300 text-lg">
+                    Sin esperas. En cuanto completes el pago seguro, recibirás el archivo PDF directamente en tu correo para leerlo en privado desde tu móvil, tablet u ordenador.
+                </p>
+                <div class="flex items-center justify-center md:justify-start gap-3 mt-3 text-sm text-gray-400">
+                    <span class="flex items-center"><i data-lucide="file-text" class="w-4 h-4 mr-1"></i> Formato PDF</span>
+                    <span class="flex items-center"><i data-lucide="smartphone" class="w-4 h-4 mr-1"></i> Compatible Móvil</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -169,11 +244,22 @@
         </div>
     </section>
 
-    <!-- 5. BOTÓN FINAL -->
+    <!-- 5. BOTÓN FINAL (CTA #2) -->
     <footer class="text-center px-4 pb-16 max-w-4xl mx-auto">
+        
+        <!-- Bloque de Precio y Urgencia Final -->
+        <div class="mb-6">
+            <p class="text-red-500 font-bold uppercase tracking-widest text-sm mb-2 animate-pulse">Oferta de Lanzamiento</p>
+            <div class="flex items-center justify-center gap-4">
+                <span class="text-gray-500 line-through text-2xl">27 $</span>
+                <span class="text-5xl font-black text-green-neon">12,90 $</span>
+            </div>
+            <p class="text-gray-400 text-sm mt-2">IVA incluido (si aplica)</p>
+        </div>
+
         <!-- ENLACE DE PAGO DE HOTMART INTEGRADO -->
         <a href="https://pay.hotmart.com/V103805314Q" class="group block w-full md:w-4/5 mx-auto">
-            <button class="w-full btn-gradient text-black font-black text-2xl md:text-3xl py-6 px-4 rounded-xl shadow-lg shadow-yellow-900/40 transform transition hover:scale-105 hover:shadow-2xl active:scale-95">
+            <button class="w-full btn-gradient text-black font-black text-2xl md:text-4xl py-6 px-4 rounded-xl shadow-lg shadow-yellow-900/40 transform transition hover:scale-105 hover:shadow-2xl active:scale-95 border-2 border-yellow-300/30">
                 SÍ, QUIERO LAS 5 HISTORIAS<br class="md:hidden"> DE LUPE AHORA
                 <i data-lucide="chevron-right" class="inline-block w-8 h-8 ml-2 group-hover:translate-x-1 transition-transform"></i>
             </button>
