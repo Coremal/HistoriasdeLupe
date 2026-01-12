@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "v0hz3z9pbh");
-</script>
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -28,6 +21,16 @@
     src="https://www.facebook.com/tr?id=1262148045726900&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Microsoft Clarity Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "v0hz3z9pbh");
+    </script>
+    <!-- End Microsoft Clarity Code -->
 
     <title>Las Vivencias de Lupe - Historias Exclusivas</title>
     <meta name="description" content="5 Historias que dejarán seco el martillo: Lo que no pude contarte en el video.">
@@ -106,33 +109,20 @@
             Las Vivencias más <br/><span class="text-red-600">Guarras de Lupe</span>
         </h1>
         
-        <!-- Slogan -->
+        <!-- Slogan con Flecha -->
         <p class="text-lg md:text-2xl text-gray-300 italic mb-4 font-light inline-block">
             "5 Historias que dejarán seco el martillo".
+            <br><span class="animate-bounce inline-block mt-2 text-2xl">👇</span>
         </p>
 
-        <!-- Imagen Hero (Carga local) - ALTURA REDUCIDA EN MÓVIL (h-64) -->
-        <!-- Usamos object-top para que al recortar se vea la cara y no el cuerpo si es muy alta -->
-        <div class="relative w-full max-w-md mx-auto mb-6 hero-image-container rounded-lg overflow-hidden border border-gray-800">
-            <img src="./lupe-hero.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop';"
-                 alt="Lupe mirando a cámara" 
-                 class="hero-mobile-compact w-full h-64 md:h-96 object-cover object-top opacity-90 hover:opacity-100 transition duration-500 filter contrast-110">
-            
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent h-20 flex items-end justify-center pb-4">
-                <span class="text-gold font-serif italic text-sm md:text-lg px-4 py-1 bg-black/40 rounded backdrop-blur-sm">Soy Lupe... y tengo algo que contarte.</span>
-            </div>
-        </div>
-
-        <!-- BLOQUE DE COMPRA IMPULSIVA (MOVIDO ARRIBA) -->
-        <!-- Este bloque ahora aparece justo debajo de la imagen para estar Above The Fold -->
-        <div class="max-w-md mx-auto mb-8 bg-gray-900 border border-gray-700 p-4 rounded-xl relative overflow-hidden shadow-2xl shadow-yellow-900/20">
+        <!-- BLOQUE DE COMPRA IMPULSIVA (AHORA ESTÁ AQUÍ, ANTES DE LA IMAGEN) -->
+        <div class="max-w-md mx-auto mb-6 bg-gray-900 border border-gray-700 p-4 rounded-xl relative overflow-hidden shadow-2xl shadow-yellow-900/20">
             <!-- Etiqueta de escasez -->
             <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-bl-lg uppercase">
                 -52% Descuento
             </div>
 
-            <!-- PRUEBA SOCIAL REFORZADA (Punto 3) -->
+            <!-- PRUEBA SOCIAL REFORZADA -->
             <div class="bg-yellow-900/30 border border-yellow-600/30 rounded p-2 mb-3">
                 <p class="text-yellow-400 font-bold text-sm md:text-base animate-pulse flex items-center justify-center gap-2">
                     <i data-lucide="users" class="w-4 h-4"></i>
@@ -150,11 +140,23 @@
 
             <a href="https://pay.hotmart.com/V103805314Q" class="group block w-full">
                 <button class="w-full btn-gradient text-black font-black text-xl py-3 px-4 rounded-lg transform transition hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                    QUIERO LEERLAS YA
+                    CLICK AQUÍ PARA ACCEDER
                     <i data-lucide="zap" class="w-5 h-5 fill-black"></i>
                 </button>
             </a>
             <p class="text-[10px] text-gray-500 mt-2">Descarga inmediata en PDF • Privacidad total en extracto.</p>
+        </div>
+
+        <!-- Imagen Hero (Carga local) - Ahora está DEBAJO del botón -->
+        <div class="relative w-full max-w-md mx-auto mb-6 hero-image-container rounded-lg overflow-hidden border border-gray-800">
+            <img src="./lupe-hero.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop';"
+                 alt="Lupe mirando a cámara" 
+                 class="hero-mobile-compact w-full h-64 md:h-96 object-cover object-top opacity-90 hover:opacity-100 transition duration-500 filter contrast-110">
+            
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent h-20 flex items-end justify-center pb-4">
+                <span class="text-gold font-serif italic text-sm md:text-lg px-4 py-1 bg-black/40 rounded backdrop-blur-sm">Soy Lupe... y tengo algo que contarte.</span>
+            </div>
         </div>
     </header>
 
