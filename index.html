@@ -115,7 +115,7 @@
             <br><span class="animate-bounce inline-block mt-2 text-2xl">👇</span>
         </p>
 
-        <!-- BLOQUE DE COMPRA IMPULSIVA (AHORA ESTÁ AQUÍ, ANTES DE LA IMAGEN) -->
+        <!-- BLOQUE DE COMPRA IMPULSIVA (ARRIBA) -->
         <div class="max-w-md mx-auto mb-6 bg-gray-900 border border-gray-700 p-4 rounded-xl relative overflow-hidden shadow-2xl shadow-yellow-900/20">
             <!-- Etiqueta de escasez -->
             <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-bl-lg uppercase">
@@ -130,7 +130,7 @@
                 </p>
             </div>
 
-            <!-- Precio y Botón -->
+            <!-- Precio y Botón con Widget Integrado -->
             <div class="mb-3">
                 <p class="text-gray-400 text-sm line-through">Precio habitual: 27 $</p>
                 <div class="flex items-center justify-center gap-3">
@@ -138,7 +138,8 @@
                 </div>
             </div>
 
-            <a href="https://pay.hotmart.com/V103805314Q" class="group block w-full">
+            <!-- AQUI he añadido la clase 'hotmart-fb' y el 'checkoutMode=2' -->
+            <a href="https://pay.hotmart.com/V103805314Q?checkoutMode=2" class="hotmart-fb group block w-full">
                 <button class="w-full btn-gradient text-black font-black text-xl py-3 px-4 rounded-lg transform transition hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                     CLICK AQUÍ PARA ACCEDER
                     <i data-lucide="zap" class="w-5 h-5 fill-black"></i>
@@ -147,7 +148,7 @@
             <p class="text-[10px] text-gray-500 mt-2">Descarga inmediata en PDF • Privacidad total en extracto.</p>
         </div>
 
-        <!-- Imagen Hero (Carga local) - Ahora está DEBAJO del botón -->
+        <!-- Imagen Hero (Carga local) -->
         <div class="relative w-full max-w-md mx-auto mb-6 hero-image-container rounded-lg overflow-hidden border border-gray-800">
             <img src="./lupe-hero.jpg" 
                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop';"
@@ -282,7 +283,8 @@
             <p class="text-gray-400 text-sm mt-2">IVA incluido (si aplica)</p>
         </div>
 
-        <a href="https://pay.hotmart.com/V103805314Q" class="group block w-full md:w-4/5 mx-auto">
+        <!-- AQUI he añadido también la clase 'hotmart-fb' y el 'checkoutMode=2' -->
+        <a href="https://pay.hotmart.com/V103805314Q?checkoutMode=2" class="hotmart-fb group block w-full md:w-4/5 mx-auto">
             <button class="w-full btn-gradient text-black font-black text-2xl md:text-4xl py-6 px-4 rounded-xl shadow-lg shadow-yellow-900/40 transform transition hover:scale-105 hover:shadow-2xl active:scale-95 border-2 border-yellow-300/30">
                 SÍ, QUIERO LAS 5 HISTORIAS<br class="md:hidden"> DE LUPE AHORA
                 <i data-lucide="chevron-right" class="inline-block w-8 h-8 ml-2 group-hover:translate-x-1 transition-transform"></i>
@@ -298,6 +300,21 @@
             <p class="mt-2">Este sitio no forma parte del sitio web de Facebook o Facebook Inc.</p>
         </div>
     </footer>
+
+    <!-- HOTMART WIDGET SCRIPT -->
+    <script type="text/javascript">
+        function importHotmart(){
+            var imported = document.createElement('script');
+            imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+            document.head.appendChild(imported);
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+            document.head.appendChild(link);
+        }
+        importHotmart();
+    </script>
 
     <script>
         // Inicializar iconos de Lucide
